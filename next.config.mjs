@@ -8,4 +8,4 @@ const nextConfig = {
   basePath: "",
 };
 
-export default withContentlayer(nextConfig);
+module.exports = withContentlayer(nextConfig);
