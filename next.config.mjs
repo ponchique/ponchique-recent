@@ -8,6 +8,7 @@ const nextConfig = {
   experimental: {
     mdxRs: true,
   },
+  basePath: "",
 };
 
 export default withContentlayer(nextConfig);
