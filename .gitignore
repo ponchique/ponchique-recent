@@ -12,6 +12,9 @@
 /.next/
 /out/
 
+#local deploy
+.actrc
+
 # production
 /build
 
