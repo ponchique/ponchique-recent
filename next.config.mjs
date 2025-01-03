@@ -5,7 +5,7 @@ const nextConfig = {
   pageExtensions: ["js", "jsx", "ts", "tsx", "md", "mdx"],
   output: "export",
   images: { unoptimized: true },
-  basePath: "ponchique-recent",
+  basePath: "/ponchique-recent",
 };
 
 const config = (phase, { defaultConfig }) => withContentlayer(nextConfig);
