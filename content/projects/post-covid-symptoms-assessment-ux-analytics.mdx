@@ -1,0 +1,69 @@
+---
+title: "Post-COVID assessment UX analytics"
+description: "Traking user critical behaviour to enhance experience"
+date: 2023-08-15
+published: true
+---
+
+## Project Overview
+
+Fernarzt recently launched the post-COVID symptoms assessment as a part of the HealthHero enterprise
+aimed to provide citizens with quick and flexible access to medicine. To be able to track the user
+behaviour during the assessment and identify critical information such as what actions user take and
+what they avoid, we needed to design and implement the UX tracking system.
+
+**Why?**<br/>
+The goal of the the system is to build a ground for further user interview, where the final result is
+to enhance the user experience by opening more affordances and adjusting the flow according to how people
+prefer doing things given their physical and emotional state.
+
+**Team:** <br/>
+Product Manager <br/>
+UX / Product Designer <br/>
+Software Developer <br/>
+Marketing Manager
+
+**Challenges**<br/>
+The assessment system which includes post-COVID checker comprise other earlier launched assessments.
+The tracking machine were implemented using GA, however, the recent marketing team migration to Matomo
+required introduction of the new tool to the system. To avoid tech debts and code complications we needed either
+to convince marketing team to go back to the GA or migrate a tracking system to Matomo. To avoid cognitive overload and organisation disaster we move on with the second option.
+
+**Goals**
+The tracking system is technically implemented tested and the data is visaulised using external tool such as Amazon Quicksight.
+
+The Marketing and Developemnt teams are aligned on the tracking tools
+
+All departments are able to read tracking results using Amazon Quicksight dashboards
+
+## Solution and Implementations
+
+**Phase 1** <br/>
+To validate the critical information to collect with Marketing and Design teams <br/>
+Collaborate together on the acceptance criteria <br/>
+Reconciliate the terminology with all department to establish a ubiquitous tracking system language
+
+**Phase 2** <br/>
+Introduce the system with Matomo <br/>
+Implement Matomo and set up a staging tracking environment <br/>
+Ensure the expected results by marketers and designers <br/>
+Deploy to production to unblock departments for insights collection
+
+**Phase 3** <br/>
+Migrate earlier assessments tracking tool to Matomo <br/>
+The developer exported historical data from Google Analytics and imported it into Matomo. <br/>
+The product manager ensured that no critical tracking points were lost during the migration. <br/>
+The team tested the new setup to confirm data accuracy and consistency.
+
+## Results
+
+- Critical Tracking Achieved: The system successfully captured key user behavior metrics, such as:
+  - Steps where users spent the most/least time.
+  - Common drop-off points during the assessment.
+  - Actions that users avoided, providing insights for UX improvements.
+- Streamlined Tools: Unified tracking under Matomo reduced cognitive overload and improved organization within the marketing department.
+- Actionable Visualizations: Custom dashboards using Amazon Charts enabled the team to:
+  - Monitor assessment performance.
+  - Identify trends and patterns.
+  - Make data-driven decisions to improve the UX.
+- Seamless Migration: All tracking from the previous implementation was successfully moved to Matomo, ensuring consistency and alignment across systems.
