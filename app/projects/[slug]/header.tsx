@@ -5,6 +5,7 @@ import React, { useEffect, useRef, useState } from "react";
 
 type Props = {
   project: {
+    slug: string;
     url?: string;
     title: string;
     description: string;
@@ -43,7 +44,9 @@ export const Header: React.FC<Props> = ({ project, views }) => {
   return (
     <header
       ref={ref}
-      className="relative isolate overflow-hidden bg-gradient-to-tl from-black via-zinc-900 to-black"
+      className={`relative isolate overflow-hidden ${
+        project.slug === "concrete-chat"
+      } ?  bg-gradient-to-tl from-lime-300 via-cyan-50 to-violet-500`} // Individual background gradient
     >
       <div
         className={`fixed inset-x-0 top-0 z-50 backdrop-blur lg:backdrop-blur-none duration-200 border-b lg:bg-transparent ${
@@ -91,7 +94,7 @@ export const Header: React.FC<Props> = ({ project, views }) => {
             href="/projects"
             className={`duration-200 hover:font-medium ${
               isIntersecting
-                ? " text-zinc-400 hover:text-zinc-100"
+                ? " text-zinc-800 hover:text-zinc-100" // Individual arrow back color
                 : "text-zinc-600 hover:text-zinc-900"
             } `}
           >
@@ -102,10 +105,10 @@ export const Header: React.FC<Props> = ({ project, views }) => {
       <div className="container mx-auto relative isolate overflow-hidden  py-24 sm:py-32">
         <div className="mx-auto max-w-7xl px-6 lg:px-8 text-center flex flex-col items-center">
           <div className="mx-auto max-w-2xl lg:mx-0">
-            <h1 className="text-4xl font-bold tracking-tight text-white sm:text-6xl font-display">
+            <h1 className="text-4xl font-bold tracking-tight text-zinc-900 sm:text-6xl font-display">
               {project.title}
             </h1>
-            <p className="mt-6 text-lg leading-8 text-zinc-300">
+            <p className="mt-6 text-lg leading-8 text-zinc-700">
               {project.description}
             </p>
           </div>
