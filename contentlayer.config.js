@@ -4,6 +4,7 @@ import rehypePrettyCode from "rehype-pretty-code";
 import rehypeSlug from "rehype-slug";
 import rehypeAutolinkHeadings from "rehype-autolink-headings";
 import rehypeRewrite from "rehype-rewrite";
+import rehypeImgSize from "rehype-img-size";
 
 /** @type {import('contentlayer/source-files').ComputedFields} */
 const computedFields = {
@@ -98,6 +99,7 @@ export default makeSource({
           },
         },
       ],
+      [rehypeImgSize, { dir: "public" }],
       [
         rehypeRewrite,
         {
@@ -111,6 +113,7 @@ export default makeSource({
                 ...node.properties,
                 src: "/ponchique-recent" + node.properties.src,
               };
+              console.log("nodepr", node);
             }
           },
         },
