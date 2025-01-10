@@ -4,7 +4,17 @@ import rehypePrettyCode from "rehype-pretty-code";
 import rehypeSlug from "rehype-slug";
 import rehypeAutolinkHeadings from "rehype-autolink-headings";
 import rehypeRewrite from "rehype-rewrite";
-import rehypeImgSize from "rehype-img-size";
+
+import * as dotenv from "dotenv";
+
+dotenv.config({ path: `.env.${process.env.NODE_ENV || "development"}` });
+
+console.log(
+  "Environment Variable (Contentlayer):",
+  process.env.NEXT_PUBLIC_BASE_PATH
+);
+
+const path = process.env.NEXT_PUBLIC_BASE_PATH;
 
 /** @type {import('contentlayer/source-files').ComputedFields} */
 const computedFields = {
@@ -99,21 +109,19 @@ export default makeSource({
           },
         },
       ],
-      [rehypeImgSize, { dir: "public" }],
       [
         rehypeRewrite,
         {
           rewrite: (node) => {
-            if (
-              node.type === "element" &&
-              node.tagName === "img" &&
-              process.env.NODE_ENV === "production"
-            ) {
+            if (node.type === "element" && node.tagName === "img") {
+              const title = node.properties.title || "";
+              const width = title.replace(/[^0-9]/g, "");
               node.properties = {
                 ...node.properties,
-                src: "/ponchique-recent" + node.properties.src,
+                src: path + node.properties.src,
+                width: (node.properties.title = width),
               };
-              console.log("nodepr", node);
+              delete node.properties.title;
             }
           },
         },
