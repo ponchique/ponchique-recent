@@ -115,11 +115,22 @@ export default makeSource({
           rewrite: (node) => {
             if (node.type === "element" && node.tagName === "img") {
               const title = node.properties.title || "";
-              const width = title.replace(/[^0-9]/g, "");
+              const width = title.replace("width=", "");
               node.properties = {
                 ...node.properties,
                 src: path + node.properties.src,
-                width: (node.properties.title = width),
+                width: width,
+              };
+              delete node.properties.title;
+            }
+
+            if (node.type === "element" && node.tagName === "a") {
+              const title = node.properties.title || "";
+              const className = title.replace("className=", "");
+              node.properties = {
+                ...node.properties,
+                className: className,
+                target: "_blank",
               };
               delete node.properties.title;
             }

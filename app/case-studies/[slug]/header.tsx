@@ -95,10 +95,10 @@ export const Header: React.FC<Props> = ({ project, views }) => {
           </div>
 
           <Link
-            href="/projects"
+            href="/case-studies"
             className={`duration-200 hover:font-medium ${
               isIntersecting
-                ? " text-zinc-800 hover:text-zinc-100" // Individual arrow back color
+                ? " text-zinc-800 hover:text-zinc-500" // Individual arrow back color
                 : "text-zinc-600 hover:text-zinc-900"
             } `}
           >
