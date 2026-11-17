@@ -50,15 +50,15 @@ export default async function ProjectsPage() {
         </div>
         {/* <div className="w-full h-px bg-stone-800" /> */}
 
-        <div className="grid grid-cols-1 gap-8 mx-auto lg:grid-cols-2 ">
+        <div className="grid grid-cols-1 gap-8 mx-auto lg:grid-cols-[65fr_35fr] ">
           <Card>
             <Link href={`/case-studies/${featured.slug}`}>
               <article className="relative w-full h-full p-4 pb-14 md:p-8 md:pb-16">
                 <Image
-                  src={`${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}/images/bitwala-phase-2.webp`}
+                  src={`${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}/images/bitwala-loans.webp`}
                   alt={featured.title}
-                  width={1841}
-                  height={1037}
+                  width={1590}
+                  height={1272}
                   className="w-full mb-6 rounded-md"
                   priority
                 />
@@ -67,7 +67,7 @@ export default async function ProjectsPage() {
                     {featured.date ? (
                       <time dateTime={new Date(featured.date).toISOString()}>
                         {Intl.DateTimeFormat(undefined, {
-                          dateStyle: "medium",
+                          year: "numeric",
                         }).format(new Date(featured.date))}
                       </time>
                     ) : (
