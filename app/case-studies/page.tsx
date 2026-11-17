@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 import { allProjects } from "contentlayer/generated";
@@ -12,32 +13,27 @@ const redis = Redis.fromEnv();
 export const revalidate = 60;
 export default async function ProjectsPage() {
   // Placeholder for Redis views
-  const views = allProjects.reduce((acc, project) => {
-    acc[project.slug] = Math.floor(Math.random() * 100);
-    return acc;
-  }, {} as Record<string, number>);
-  const featured = allProjects.find(
-    (project) => project.slug === "bitwala-loans"
-  )!;
-  const top2 = allProjects.find(
-    (project) => project.slug === "concrete-chat"
-  )!;
-  const top3 = allProjects.find(
-    (project) => project.slug === "pet-care-app"
-  )!;
+  const views = allProjects.reduce(
+    (acc, project) => {
+      acc[project.slug] = Math.floor(Math.random() * 100);
+      return acc;
+    },
+    {} as Record<string, number>,
+  );
+  const featured = allProjects.find((project) => project.slug === "bitwala-loans")!;
+  const top2 = allProjects.find((project) => project.slug === "concrete-chat")!;
+  const top3 = allProjects.find((project) => project.slug === "pet-care-app")!;
 
   const sorted = allProjects
     .filter((p) => p.published)
     .filter(
       (project) =>
-        project.slug !== featured.slug &&
-        project.slug !== top2.slug &&
-        project.slug !== top3.slug
+        project.slug !== featured.slug && project.slug !== top2.slug && project.slug !== top3.slug,
     )
     .sort(
       (a, b) =>
         new Date(b.date ?? Number.POSITIVE_INFINITY).getTime() -
-        new Date(a.date ?? Number.POSITIVE_INFINITY).getTime()
+        new Date(a.date ?? Number.POSITIVE_INFINITY).getTime(),
     );
 
   return (
@@ -57,7 +53,15 @@ export default async function ProjectsPage() {
         <div className="grid grid-cols-1 gap-8 mx-auto lg:grid-cols-2 ">
           <Card>
             <Link href={`/case-studies/${featured.slug}`}>
-              <article className="relative w-full h-full p-4 md:p-8">
+              <article className="relative w-full h-full p-4 pb-14 md:p-8 md:pb-16">
+                <Image
+                  src={`${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}/images/bitwala-1-2.webp`}
+                  alt={featured.title}
+                  width={1841}
+                  height={1037}
+                  className="w-full mb-6 rounded-md"
+                  priority
+                />
                 <div className="flex items-center justify-between gap-2">
                   <div className="text-xs text-stone-800 group-hover:text-zinc-200">
                     {featured.date ? (
