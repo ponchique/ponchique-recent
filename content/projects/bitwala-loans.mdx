@@ -1,0 +1,85 @@
+---
+title: "Bitwala Loans: From ~12.5% to ~75% Transactional Success Rate"
+description: "Borrow USDC against your Bitcoin instead of selling it. UX research and redesign that raised loan-taking success from ~12.5% to ~75%."
+date: 2026-11-11
+published: true
+---
+
+![Bitwala Loans Engineering](/images/bitwala-1.webp)
+
+## Problem
+
+Individuals who hold Bitcoin to achieve long-term capital gains will likely experience life-altering events – even more so in today’s unpredictable world with major challenges like wars, global warming, and the AI revolution.
+Situations followed by economic hardship force holders to sell their Bitcoin to stay financially afloat when necessary, losing the chance to realize Bitcoin’s potential over the long run.
+
+## Solution
+
+Let’s look at the [Boro.today](https://boro.today) service.
+Boro provides the infrastructure to borrow cash (take out a loan) against your own Bitcoin.
+
+**How does it work?** <br/>
+Users hold Bitcoin on a platform that uses Boro's infrastructure. Instead of selling their Bitcoin, they borrow USDC (which they can use however they wish) by locking their Bitcoin as collateral.
+
+The idea for the service belongs to Bitwala’s CEO, Dennis Daiber. It was conceived as a standalone B2B tool that—with a few well-written APIs—could be integrated into any crypto platform or Bitcoin wallet.
+As Boro's first client, Bitwala integrated the service into their app, wrapping it in a custom front end with a Bitwala-branded UI and an enhanced UX.
+
+## Team size and roles
+
+1x Product Designer <br/>
+2x Product Engineers (Backend Focus) <br/>
+1x Product Engineer (Frontend Focus)
+
+When I joined the project as a Product Engineer, the initial UX designs for the key flows were already in place or actively under development.
+My role was to translate those designs to the front end and conduct user testing.
+
+## Feature matrix
+
+![Feature matrix](/images/bitwala-2.webp)
+
+## Phase 1
+
+With the opt-in flow already in staging, I began by testing it myself and conducting user research.
+Observing and listening to users gave me a clearer picture of how the flow should look and what changes were needed in the existing design.
+
+Because the service was accessible only to registered users holding actual Bitcoin, my research also encompassed the steps preceding the loan flow:
+**Sign Up & Login**, **Dashboard Hierarchy & Intuitiveness**, and **MPC Wallet Creation**.
+
+How the Borrow flow looked before the UX redesign:
+
+![Borrow flow before the redesign](/images/bitwala-3.webp)
+
+## Phase 2
+
+The first round of user testing demonstrated a completion rate of only **~12%** for the "Loan Taking" flow.
+This was due to micro-friction points during account setup that, at scale, completely blocked users from taking out a loan.
+To increase transaction success, we needed to make the experience more intuitive and the interface easier to navigate—especially since modern product flows must be fast and seamless.
+
+Alongside the development of the **Loan Management** and **Repayment** APIs, I initiated a round of user research.
+The insights pointed toward focusing on the following areas:
+
+- Home (Dashboard/Overview) UX Architecture
+- Crashes & Error Handling
+- Handling Unexpected Steps in the Loan Journey
+- Wallet-to-Wallet Transfer Messaging (from Custodial to MPC)
+- Fee Transparency
+- Login & Onboarding UX
+
+How the Borrow flow looked after the redesign:
+
+![Borrow flow after the redesign](/images/bitwala-4.webp)
+
+## Outcomes
+
+The second round of user testing showed a dramatic increase in the "Loan Taking" success rate, with **~75%** of transactions successfully completed following the redesign.
+
+While the "Repayment" flow achieved a **~20%** success rate—still a notable improvement over the initial benchmark—we identified key areas for improvement that will be crucial in the next development phases.
+
+![From 12,5% to 75% transactional success rate](/images/bitwala-5.webp)
+
+## Challenges
+
+Because of our small team size, everyone worked hard to wear multiple hats. While effective short-term, this burns energy much faster and can quickly lead to burnout.
+From experience, I don’t recommend operating at full capacity for more than 3 to 4 months without a 2 to 3-week break; at a certain point, the tank runs so low that it no longer drives you or your business forward.
+
+Thank you for reading, <br/>
+Until next [thing]

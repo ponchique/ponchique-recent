@@ -17,11 +17,13 @@ export default async function ProjectsPage() {
     return acc;
   }, {} as Record<string, number>);
   const featured = allProjects.find(
+    (project) => project.slug === "bitwala-loans"
+  )!;
+  const top2 = allProjects.find(
     (project) => project.slug === "concrete-chat"
   )!;
-  const top2 = allProjects.find((project) => project.slug === "pet-care-app")!;
   const top3 = allProjects.find(
-    (project) => project.slug === "post-covid-symptoms-assessment-ux-analytics"
+    (project) => project.slug === "pet-care-app"
   )!;
 
   const sorted = allProjects
