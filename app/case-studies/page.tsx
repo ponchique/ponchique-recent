@@ -21,8 +21,8 @@ export default async function ProjectsPage() {
     {} as Record<string, number>,
   );
   const featured = allProjects.find((project) => project.slug === "bitwala-loans")!;
-  const top2 = allProjects.find((project) => project.slug === "concrete-chat")!;
-  const top3 = allProjects.find((project) => project.slug === "pet-care-app")!;
+  const top2 = allProjects.find((project) => project.slug === "pet-care-app")!;
+  const top3 = allProjects.find((project) => project.slug === "concrete-chat")!;
 
   const sorted = allProjects
     .filter((p) => p.published)
@@ -55,7 +55,7 @@ export default async function ProjectsPage() {
             <Link href={`/case-studies/${featured.slug}`}>
               <article className="relative w-full h-full p-4 pb-14 md:p-8 md:pb-16">
                 <Image
-                  src={`${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}/images/bitwala-loans.webp`}
+                  src={`${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}/images/bitwala.webp`}
                   alt={featured.title}
                   width={1590}
                   height={1272}
