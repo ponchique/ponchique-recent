@@ -44,11 +44,7 @@ export const Header: React.FC<Props> = ({ project, views }) => {
   return (
     <header
       ref={ref}
-      className={`relative isolate overflow-hidden ${
-        project.slug === "post-covid-symptoms-assessment-ux-analytics"
-          ? "bg-gradient-to-tr from-sky-900 via-cyan-50 to-red-400"
-          : "bg-cian-50"
-      }`} // Individual background gradient
+      className="relative isolate overflow-hidden"
     >
       <div
         className={`fixed inset-x-0 top-0 z-50 backdrop-blur lg:backdrop-blur-none duration-200 border-b lg:bg-transparent ${

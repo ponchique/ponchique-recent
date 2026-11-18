@@ -5,6 +5,7 @@ import { allProjects } from "contentlayer/generated";
 import { Navigation } from "../components/nav";
 import { Card } from "../components/card";
 import { Article } from "./article";
+import { Morse } from "../components/morse";
 import { Redis } from "@upstash/redis";
 import { Eye } from "lucide-react";
 
@@ -50,7 +51,8 @@ export default async function ProjectsPage() {
         </div>
         {/* <div className="w-full h-px bg-stone-800" /> */}
 
-        <div className="grid grid-cols-1 gap-8 mx-auto lg:grid-cols-[65fr_35fr] ">
+        <div className="grid grid-cols-1 gap-8 mx-auto lg:grid-cols-[60fr_40fr] items-start">
+          <div className="flex flex-col gap-8 lg:self-stretch">
           <Card>
             <Link href={`/case-studies/${featured.slug}`}>
               <article className="relative w-full h-full p-4 pb-14 md:p-8 md:pb-16">
@@ -99,6 +101,11 @@ export default async function ProjectsPage() {
               </article>
             </Link>
           </Card>
+          {/* filler under the featured card, desktop only */}
+          <div className="items-end flex-1 hidden lg:flex">
+            <Morse />
+          </div>
+          </div>
 
           <div className="flex flex-col w-full gap-8 mx-auto border-t border-gray-900/10 lg:mx-0 lg:border-t-0 ">
             {[top2, top3].map((project) => (

@@ -8,3 +8,20 @@
   }
 } 
 
+
+/* "Hire me!" in Morse code: bars light up in sequence, then loop */
+.morse-bar {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  border-radius: 9999px;
+  background: #d4d4d8;
+  animation: morse-blink linear infinite;
+}
+@keyframes morse-blink {
+  0%, 3% { background: #18181b; }
+  3.01%, 100% { background: #d4d4d8; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .morse-bar { animation: none; }
+}
