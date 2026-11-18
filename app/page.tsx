@@ -29,7 +29,7 @@ export default function Home() {
         quantity={100}
       /> */}
       <h1 className="py-3.5 px-0.5 z-10 text-4xl duration-7000 text-stone-900 cursor-default text-edge-outline animate-title font-display sm:text-6xl md:text-9xl whitespace-nowrap bg-clip-text ">
-        ponchique
+        Anastasiia Norenko
       </h1>
 
       {/* <div className="hidden w-screen h-px animate-glow md:block animate-fade-right bg-gradient-to-r from-zinc-300/0 via-zinc-300/50 to-zinc-300/0" /> */}
