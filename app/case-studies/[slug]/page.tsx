@@ -38,7 +38,7 @@ export default async function PostPage({ params }: Props) {
     <div className="bg-zinc-50 min-h-screen">
       <Header project={project} views={views} />
       <ReportView slug={project.slug} />
-      <article className="px-4 pb-12 mx-auto prose prose-zinc prose-quoteless prose-img:my-0">
+      <article className="px-4 pb-12 mx-auto prose prose-zinc prose-quoteless prose-img:my-0 prose-a:text-[#FF8A00]">
         <Mdx code={project.body.code} />
       </article>
     </div>
