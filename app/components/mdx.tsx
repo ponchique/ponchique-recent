@@ -98,11 +98,18 @@ const components = {
   img: ({
     className,
     alt,
+    src,
     ...props
-  }: React.ImgHTMLAttributes<HTMLImageElement>) => (
+  }: React.ImgHTMLAttributes<HTMLImageElement>) => {
+    // Raw <img> in MDX skips the rehype rewrite, so add the base path unless it's already there.
+    const base = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
+    const fixed =
+      typeof src === "string" && src.startsWith("/") && !src.startsWith(`${base}/`)
+        ? base + src
+        : src;
     // eslint-disable-next-line @next/next/no-img-element
-    <img className={clsx("rounded-md", className)} alt={alt} {...props} />
-  ),
+    return <img className={clsx("rounded-md", className)} alt={alt} src={fixed} {...props} />;
+  },
   hr: ({ ...props }) => (
     <hr className="my-4 border-zinc-200 md:my-8" {...props} />
   ),
