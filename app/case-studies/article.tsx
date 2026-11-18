@@ -10,7 +10,7 @@ type Props = {
 
 const covers: Record<string, { src: string; width: number; height: number }> = {
   "concrete-chat": {
-    src: "/images/concerete-chat.webp",
+    src: "/images/taskany.webp",
     width: 4000,
     height: 2800,
   },
@@ -44,9 +44,7 @@ export const Article: React.FC<Props> = ({ project, views }) => {
           <span className="text-xs duration-300 text-zinc-900 group-hover:text-zinc-200 drop-shadow-orange">
             {project.date ? (
               <time dateTime={new Date(project.date).toISOString()}>
-                {Intl.DateTimeFormat(undefined, { year: "numeric" }).format(
-                  new Date(project.date)
-                )}
+                {Intl.DateTimeFormat(undefined, { year: "numeric" }).format(new Date(project.date))}
               </time>
             ) : (
               <span>SOON</span>

@@ -42,10 +42,10 @@ export default async function ProjectsPage() {
       <div className="px-6 pt-20 mx-auto space-y-8 max-w-7xl lg:px-8 md:space-y-16 md:pt-24 lg:pt-32">
         <div className="max-w-2xl mx-auto lg:mx-0">
           <h2 className="text-3xl font-bold tracking-tight text-zinc-900 sm:text-4xl">
-            Case Studies
+            Case Studies & Works
           </h2>
           <p className="mt-4 text-stone-600">
-            Some of the case studies are from work and some are on my own time.
+            Some of the them are from work and some are on my own time.
           </p>
         </div>
         {/* <div className="w-full h-px bg-stone-800" /> */}
