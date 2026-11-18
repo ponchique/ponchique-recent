@@ -14,6 +14,11 @@ const covers: Record<string, { src: string; width: number; height: number }> = {
     width: 4000,
     height: 2800,
   },
+  "leacare-ecommerce": {
+    src: "/images/lea-care.webp",
+    width: 1590,
+    height: 1272,
+  },
   "pet-care-app": {
     src: "/images/boopable.webp",
     width: 1590,
