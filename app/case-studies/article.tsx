@@ -19,6 +19,11 @@ const covers: Record<string, { src: string; width: number; height: number }> = {
     width: 1590,
     height: 1272,
   },
+  "nicht-verstehen": {
+    src: "/images/nicht.webp",
+    width: 1590,
+    height: 1272,
+  },
   "pet-care-app": {
     src: "/images/boopable.webp",
     width: 1590,
